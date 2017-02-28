@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PopupWindowSample</string>
+    <string name="show_match_parent_popup_window">Show(MatchParent)</string>
+    <string name="hide_match_parent_popup_window">Hide(MatchParent)</string>
+    <string name="show_wrap_content_popup_window">Show(WrapContent)</string>
+    <string name="hide_wrap_content_popup_window">Hide(WrapContent)</string>
+    <string name="popup_window">Here is PopupWindow</string>
+</resources>
