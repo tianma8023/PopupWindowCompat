@@ -12,11 +12,11 @@ PopupWindow 中的 showAsDropDown(View anchor) 用于在指定锚点View下方�
 ## 解决方案
 如果出现上述分析中的兼容性问题，可以使用 showAtLocation() 方法替代 showAsDropDown() , 示例代码如下，详情可参见 [PopupWindowCompatSample](https://github.com/tianma8023/PopupWindowCompat/blob/master/app/src/main/java/com/tianma/popupwindowsample/MainActivity.java)
 ```java
-if (Build.VERSION.SDK_INT >= 23) { // Android 7.x中,PopupWindow高度为match_parent时,会出现兼容性问题,需要处理兼容性
+if (Build.VERSION.SDK_INT >= 24) { // Android 7.x中,PopupWindow高度为match_parent时,会出现兼容性问题,需要处理兼容性
     int[] location = new int[2]; // 记录anchor在屏幕中的位置
     anchor.getLocationOnScreen(location);
     int offsetY = location[1] + anchor.getHeight();
-    if (Build.VERSION.SDK_INT == 24) { // Android 7.1中，PopupWindow高度为 match_parent 时，会占据整个屏幕
+    if (Build.VERSION.SDK_INT == 25) { // Android 7.1中，PopupWindow高度为 match_parent 时，会占据整个屏幕
         // 故而需要在 Android 7.1上再做特殊处理
         int screenHeight = ScreenUtils.getScreenHeight(context); // 获取屏幕高度
         popupWindow.setHeight(screenHeight - offsetY); // 重新设置 PopupWindow 的高度
